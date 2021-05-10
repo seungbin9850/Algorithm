@@ -1,8 +1,12 @@
 function solution(participant, completion) {
-  participant.sort();
-  completion.sort();
-  for (let i in participant)
-    if (participant[i] !== completion[i]) return participant[i];
+  let arr = participant.concat(completion);
+  let hash = arr.reduce((acc, p) => {
+    acc[p] = acc[p] ? acc[p] + 1 : 1;
+    return acc;
+  }, {});
+  for (let index in hash) {
+    if (hash[index] % 2 === 1) return index;
+  }
 }
 
 console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"]));
