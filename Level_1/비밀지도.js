@@ -1,5 +1,5 @@
 function solution(n, arr1, arr2) {
-  var answer = [];
+  const answer = [];
 
   for (let i = 0; i < n; i++) {
     const map = (arr1[i] | arr2[i])
